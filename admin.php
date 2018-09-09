@@ -14,7 +14,7 @@
 # pegar a data atual em timestamp e gravar os dados no banco, redirecionando para admin.php logo após
 # Procurar em sites de busca por php time
 
-if(isset($_POST['entrar'])) {
+if(isset($_POST['cadastrar'])) {
     $errors = [];
 }
 
@@ -57,7 +57,7 @@ $title = ' - Administrar'; # Este título complementa o de header.php
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" name="entrar" value="Entrar" /></td>
+                <td colspan="2"><input type="submit" name="cadastrar" value="Cadastrar" /></td>
             </tr>
         </table>
     </form>
