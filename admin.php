@@ -7,7 +7,7 @@ if(!isset($_SESSION['auth'])) {
 	exit;
 }
 
-if(isset($_POST['entrar'])) {
+if(isset($_POST['cadastrar'])) {
 
     $errors = [];
     
@@ -58,7 +58,7 @@ require 'header.php';
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" name="entrar" value="Entrar" /></td>
+                <td colspan="2"><input type="submit" name="cadastrar" value="Cadastrar" /></td>
             </tr>
         </table>
     </form>
