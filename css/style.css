@@ -1,0 +1,91 @@
+html, body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-color: #f1f3f4;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header {
+    background-color: #107895;
+    padding: 2px 0px 2px 20px;
+    color: #ffffff;
+}
+
+header span {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+}
+
+header span a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header span a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+nav {
+    width: 10%;
+    float:left;
+}
+
+main {
+    width: 88%;
+    float:left;
+    padding: 0 1% 1% 1%;
+}
+
+main span {
+    display:block;
+    text-align: right;
+    font-size: 0.8em;
+}
+
+nav ul {
+    padding: 0 5px 0 5px;
+    list-style-type: none;
+}
+
+nav ul li {
+    font-size: 1.2em;
+    padding:5px 20px 5px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #107895;
+}
+
+nav ul li:hover {
+    background-color: #107895;
+}
+
+nav ul li:hover a {
+    color: #f1f3f4;
+}
+
+footer {
+    clear:both;
+    font-size: 0.8em;
+    text-align:center;
+}
+
+.error {
+	color: red;
+}
+
+.success {
+    color: green;
+}
