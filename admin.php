@@ -12,7 +12,7 @@ if(isset($_POST['entrar'])) {
     $errors = [];
     
     foreach(['titulo', 'categoria', 'texto'] as $chave) {
-        $$chave = $sqlite->escapeString($_POST[$chave] ?? '');
+        $$chave = trim($sqlite->escapeString($_POST[$chave] ?? ''));
         if(!$$chave)
             $errors[$chave] = 'Obrigatório';
     }
@@ -21,6 +21,7 @@ if(isset($_POST['entrar'])) {
         $data = time();
         $sqlite->exec("INSERT INTO topicos (titulo, categoria, texto, data) VALUES ('$titulo', '$categoria', '$texto', $data)");
         header('Location: admin.php?success');
+        exit;
     }
 }
 
@@ -46,14 +47,14 @@ require 'header.php';
                 <td>Categoria: </td>
                 <td>
                     <input type="text" name="categoria" placeholder="Categoria" value="<?=$categoria ?? ''?>" />
-                    <div class="error"><?=$errors['titulo'] ?? ''?></div>
+                    <div class="error"><?=$errors['categoria'] ?? ''?></div>
                 </td>
             </tr>
             <tr>
                 <td>Texto: </td>
                 <td>
                     <textarea name="texto" placeholder="Texto ou HTML" cols="60" rows="8"><?=$texto ?? ''?></textarea>
-                    <div class="error"><?=$errors['titulo'] ?? ''?></div>
+                    <div class="error"><?=$errors['texto'] ?? ''?></div>
                 </td>
             </tr>
             <tr>
