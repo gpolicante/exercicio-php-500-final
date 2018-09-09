@@ -1,19 +1,19 @@
 <?php
 
-require 'main.php';
+# incluir main.php
 
-$res = $sqlite->query('SELECT id, titulo, categoria, texto, data FROM topicos WHERE id = ' . (int) $_GET['id']);
+$res = $sqlite->query('SELECIONAR id, titulo, categoria, texto, data DA TABELA DE TOPICOS ONDE O ID FOR IGUAL AO DA URL');
 $topico = $res->fetchArray(SQLITE3_ASSOC);
-$topico_data = date('d/m/Y', $topico['data']);
-$title = " - {$topico['titulo']}";
+$topico_data = $topico['data']; # Tentar converter o timestamp para o formato d/m/Y
+$title = " - {$topico['titulo']}"; # Este título complementa o do header.php
 
-require 'header.php';
+# incluir header.php
 
 ?>
 <main>
-    <h2><?=$topico['titulo']?></h2>
-    <h3><?=$topico['categoria']?></h3>
-    <?=$topico['texto']?>
+    <h2># TITULO #</h2>
+    <h3># CATEGORIA #</h3>
+    <?='# TEXTO #'?>
     <span><?=$topico_data?></span>
 </main>
-<?php require 'footer.php'; ?>
+<!-- incluir footer.php -->

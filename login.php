@@ -1,32 +1,30 @@
 <?php
 
-require 'main.php';
+# incluir main.php
 
-if(isset($_SESSION['auth'])) {
-	header('Location: admin.php');
-	exit;
+# verificar se a sessão existe, se não existir, redirecionar e terminar execução
+if(isset('SESSAO?')) {
+	# header ou head? 'Location: admin.php'
+	# quit ou exit?
 }
 
-$error = false;
-if(isset($_POST['entrar'])) {
-	$email = $_POST['email'];
-	$senha = md5($_POST['senha']);
-	$rs = $sqlite->querySingle("SELECT id FROM usuarios WHERE email = '$email' AND senha = '$senha'", true);
-	if($rs) {
-		$_SESSION['auth'] = ['id' => $rs['id'], 'email' => $email];
-		header('Location: admin.php');
-		exit;
-	}
-	$error = true;
-}
+# verificar se o botão "entrar" foi "apertado
+# pegar "email" e md5() da "senha"
+# procurar no banco de dados com -> WHERE email = '$email' AND senha = '$senha'"
+# se registro existir, criar uma sessão contendo o id e o email do usuário em forma de array
+# e redirecionar para admin.php
 
-$title = ' - Login';
-require 'header.php';
+# Procurar no google: php sqlite3 query, singleQuery
+
+print_r($_POST);
+
+$title = ' - Login'; # Este título complementa o de header.php
+# incluir header.php
 
 ?>
 <main>
     <h2>Login</h2>
-    <?php if($error): ?>
+    <?php if('USUARIO ERROU EMAIL OU SENHA'): ?>
     <div class="error">Usuário ou senha inválidos</div>
     <?php endif; ?>
     <form method="post" action="login.php">
@@ -43,4 +41,4 @@ require 'header.php';
         </table>
     </form>
 </main>
-<?php require 'footer.php'; ?>
+<!-- incluir footer.php -->

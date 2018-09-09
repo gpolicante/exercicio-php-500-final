@@ -1,8 +1,10 @@
 <?php
 
-require 'main.php';
-$title = ' - Home';
-require 'header.php';
+# Incluir main.php
+
+$title = ' - Home'; # Este título complementará o título de "header.php"
+
+# Incluidr header.php
 
 ?>
 <main>
@@ -12,4 +14,4 @@ require 'header.php';
     <p>Além da Caixa, a empresa realizou outras implementações de software livre do Brasil, entre elas: Metrô de São Paulo, Casa da Moeda do Brasil, Ceagesp e Projeto CDTC (Centro de Difusão de Tecnologia e Conhecimento) – uma parceria entre a IBM e o ITI – que envolveu, entre outras ações, a maior capacitação em Linux do Brasil: 785 educadores do MEC foram treinados em Linux.</p>
     <p>Idealizadora do Hackerteen – projeto de edutainment (entretenimento educacional) para jovens da geração internet sobre segurança da computação, empreendedorismo na Internet e ética hacker – que foi avaliado como “primeiro e único no mundo” pela Harvard Business School.</p>
 </main>
-<?php require 'footer.php'; ?>
+<!-- incluir footer.php -->

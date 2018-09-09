@@ -1,13 +1,13 @@
 <?php
 
-session_start();
+# iniciar a sessão
 
-$config = parse_ini_file('config.ini');
+# ler arquivo de configuração
 
 $title = $config['title'] . $title;
 
-$sqlite = new SQLite3($config['sqlite']);
-$topicos = $sqlite->query('SELECT id, titulo, categoria FROM topicos');
+#$sqlite = new SQLite3($config['sqlite']); Descomentar quando o arquivo config.ini for carregado na variável $config
+$topicos = $sqlite->query('SELECIONAR OS CAMPOS id, titulo, categoria DA TABELA DE topicos');
 
 ?>
 <!DOCTYPE html>
@@ -19,18 +19,18 @@ $topicos = $sqlite->query('SELECT id, titulo, categoria FROM topicos');
     </head>
     <body>
         <header>
-            <h1><?=$title?></h1>
-            <?php if(isset($_SESSION['auth'])): ?>
-            <span><a href="logoff.php">SAIR</a></span>
-            <?php else:?>
-            <span><a href="login.php">ENTRAR</a></span>
-            <?php endif; ?>
+            <h1># REPETIR O TÍTULO AQUI #</h1>
+            <!-- Fazer um IF no PHP para mostrar SAIR se estiver logado -->
+            <!-- <span><a href="logoff.php">SAIR</a></span> -->
+            <!-- Caso contrário exibir ENTRAR -->
+            <!-- <span><a href="login.php">ENTRAR</a></span> -->
         </header>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <?php while($rs = $topicos->fetchArray(SQLITE3_ASSOC)): ?>
-                <li><a href="topico.php?id=<?=$rs['id']?>"><?=$rs['titulo']?></a></li>
-                <?php endwhile; ?>
+                <li><a href="index.php">Home</a></li> <!-- Este é fixo, não mexer -->
+                <li><a href="topico.php?id=ID"># NOME TOPICO #</a></li> <!-- Remover -->
+                <li><a href="topico.php?id=ID"># NOME TOPICO #</a></li> <!-- Remover -->
+                <!-- Fazer um WHILE percorrando os valores da variável $topico -->
+                <!-- <li><a href="topico.php?id=ID"># NOME TOPICO #</a></li> -->
             </ul>
         </nav>
